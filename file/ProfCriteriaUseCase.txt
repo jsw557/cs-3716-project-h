@@ -1,0 +1,39 @@
+USE CASE - SETTING GROUP PARAMETERS
+
+Actor : Prof
+
+1)Prof enters Class ID
+
+2)Class List is Fetched
+
+3)Class size is given
+
+4)prof enters size of groups
+
+5)Number of groups and sizes are returned
+
+6)Prof enters if Skills/Grades are important
+
+   6.1)Enters they are important
+
+   6.2)Prof chooses what course marks are relevant
+
+   6.3)Prof decides What skills are important and complimentary
+
+7)Prof flags certain students as Force Match/Don't Match/Neutral
+
+8)Prof sets a deadline and enters it
+
+   8.1)Prof sets no/invalid date
+
+   8.2)Prof is asked to enter again
+
+9)Prof submits info
+
+10)WebApp is now available for students
+
+
+
+Submitted for CS3716, September 18th, 2014
+
+By: Jonathan Wemp (200945046), Shane Butt (200621753)
