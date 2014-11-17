@@ -5,6 +5,6 @@ Group H
 
 Shane Butt,
 Jonathan Wemp,
-Kyung Son,
+Kyung Kook Son,
 Rui Zhang,
 Xiuzhi Liu
