@@ -1,0 +1,5 @@
+Use interface for grouping algorithm
+
+Save groups in a database, system should be indifferent to .txt, .csv etc. Use interface for saving and reading.
+
+Provides a simple UI. Class number and group size. Use swing.Do not use tons of code for click handler, forward to controller object which delegates group making to another object.
