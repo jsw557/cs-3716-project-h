@@ -1,0 +1,40 @@
+USE CASE – GENERATE GROUPS
+
+Actor : Professor
+
+1.) Professor initiates when deadline is reached.
+
+2.) Retrieve class list.
+
+3.) Retrieve student submitted information.
+
+4.) Retrieve # of goal groups and desired sizes.
+
+5.) Match Professor selected groups.
+
+    5.1) Match student preferred groups, unless forbidden by Professor.
+
+6.) Begin comparisons based on student-submitted criteria.
+
+7.) Make groups with matching information (free time, complimentary skills) 
+
+    7.1) Make groups with leftover neutral matches
+
+    7.2) Add poor matches to best group possible
+
+8.) Return groups to Professor for approval.
+
+    8.1) Professor disapproves of some or all groups.
+
+    8.2) Professor manually rearranges groups
+
+9.) Professor approves groups
+
+10.) Privately notify students of their group members.
+
+
+
+
+Submitted for CS3716, September 18th, 2014
+
+By: Jonathan Wemp (200945046), Shane Butt (200621753)

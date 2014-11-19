@@ -1,0 +1,25 @@
+USE CASE – STUDENT SELF-EVALUATION
+
+Actor - Student
+
+1.) Student visits information input site.
+
+2.) Student fills out information fields.
+
+    2.1) Student partially fills required fields. 
+ 
+        2.1.1) Student does not fill any required fields.
+
+3.) Applet returns all fields to main case and teacher.
+
+    3.1) Applet returns all valid fields, marks incomplete/incorrect fields.
+    
+    3.2) Applet returns all blank fields as neutral once deadline is up (as dictated by Professor Use Case).
+
+4.) Deadline is reached and changes are no longer submitted. All information is returned in current state.
+
+
+
+Submitted for CS3716, September 18th, 2014
+
+By: Jonathan Wemp (200945046), Shane Butt (200621753)
