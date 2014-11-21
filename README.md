@@ -29,3 +29,7 @@ javac GInterface.java Controller.java Student.java Schedule.java Group.java Matc
 The system is run with:
 
 java GInterface
+
+
+
+.csv file is the test databse file for now.
