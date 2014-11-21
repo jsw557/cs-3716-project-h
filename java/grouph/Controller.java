@@ -2,9 +2,10 @@ package grouph;
 
 
 import java.awt.*;
+
 import javax.swing.*;
-import javax.swing.JOptionPane;
 import javax.swing.filechooser.*;
+
 import java.io.*;
 import java.util.*;
 
@@ -17,11 +18,11 @@ import java.util.*;
 
 public class Controller {
     
-	private GInterface gInterface;
+	//private GInterface gInterface;
 	ArrayList<Group> groupList;	// The list that holds groups
 	private Group group;
 	private Student student;
-    private Match match;
+    //private Match match;
 	//private Project project;
 	ArrayList<Student> StuList = new ArrayList<Student>(); // The list that holds students
 	int groupSize;
@@ -30,6 +31,11 @@ public class Controller {
 	private JFileChooser chooser = new JFileChooser();
     private final String NEWLINE =  "\n";
 	
+   // public Controller()
+    //{
+    	//groupList = new ArrayList<Group>(0);
+    	//StuList= new ArrayList<Student>(0);
+    //}
 	// parse string from csv file
 	public void parseFile ( ) {
 		StuList = new ArrayList<Student>();
@@ -83,10 +89,11 @@ public class Controller {
 	}
 	
 	// receives the Student list and make a group
-	public void makeGroup ( ArrayList<Student> StuList ) {
-		groupList = match.makeGroups(StuList);
+	public void makeGroup ( ArrayList<Student> StudentList,int size) {
+		System.out.println(StudentList.get(1).getName());
+		groupList = Match.makeGroups(StudentList,size);
         for(Group grp : this.groupList){
-            gStr = gStr + grp.id +" " + grp.groupMems.get(0) + NEWLINE;
+            gStr = gStr + grp.id +" " + grp.groupMems.get(0).getName() + NEWLINE;
         }
 	}
 	
