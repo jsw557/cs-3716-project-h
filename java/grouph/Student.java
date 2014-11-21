@@ -10,9 +10,10 @@ package grouph;
  */
 public class Student
 {
-	private String name;
-	private String id;
-	private double gpa;
+	private Controller controller = new Controller();
+	String name;
+	String id;
+	double gpa;
 	/*
 	 * Empty Constructor
 	 */

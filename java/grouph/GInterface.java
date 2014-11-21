@@ -7,6 +7,8 @@ import javax.swing.*;
 
 public class GInterface extends JFrame  {
     
+    private Controller controller = new Controller();
+    
     public static void main(String[] args) {
 
         SwingUtilities.invokeLater(new Runnable() {
@@ -14,6 +16,7 @@ public class GInterface extends JFrame  {
             public void run() {
                 GInterface window = new GInterface();
                 window.setVisible(true);
+                
             }
         });
     }
@@ -27,13 +30,13 @@ public class GInterface extends JFrame  {
         JPanel groupPanel = new JPanel();
         JPanel makePanel = new JPanel();
 
-        JTextField groupSize = new JTextField();
+        final JTextField groupSize = new JTextField();
         groupSize.setPreferredSize(new Dimension(50, 25));
-        JTextArea classList = new JTextArea();
+        final JTextArea classList = new JTextArea();
         classList.setPreferredSize(new Dimension(150, 120));
        // classList.setEditable(false);
         JScrollPane classScrollPane = new JScrollPane(classList);
-        JTextArea groupList = new JTextArea();
+        final JTextArea groupList = new JTextArea();
         groupList.setPreferredSize(new Dimension(150, 120));    
         JScrollPane groupScrollPane = new JScrollPane(groupList);
         groupList.setEditable(false);
@@ -58,17 +61,20 @@ public class GInterface extends JFrame  {
         
 
         ok1.addActionListener( new ActionListener () { public void actionPerformed(ActionEvent setGSize) {
-                controller.setGroupSize(groupSize.getVal());
+                controller.setGroupSize(Integer.parseInt(groupSize.getText()));
             //System.out.println("It worked!");
             }
         });
         ok2.addActionListener( new ActionListener () {public void actionPerformed(ActionEvent getCrse) {
-                controller.parseFile(file);
+                controller.parseFile();
+                classList.setText(controller.str);
             }
         });
         ok3.addActionListener( new ActionListener () {public void actionPerformed(ActionEvent makeGrp) {
-                controller.makeGroup(stuList);
-            }
+                controller.makeGroup(controller.StuList);
+                groupList.setText(controller.gStr);
+                }
+            
         });
         
     

@@ -1,20 +1,13 @@
-import java.awt.Color;
-import java.awt.GridLayout;
-import java.awt.Dimension;
+package grouph;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import java.util.ArrayList;
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.*;
+import java.io.*;
+import java.util.*;
 
-import java.io.File;
-import java.io.PrintWriter;
-import java.util.Scanner;
-// import javax.swing.JFileChooser;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 
 /**
  * Controller receives information in terms of Groups,
@@ -25,57 +18,64 @@ import java.io.IOException;
 public class Controller {
     
 	private GInterface gInterface;
-	private ArrayList<Group> groupList;	// The list that holds groups
+	ArrayList<Group> groupList;	// The list that holds groups
 	private Group group;
 	private Student student;
-	private Project project;
-	private ArrayList<Student> StuList;	= new ArrayList<Student>// The list that holds students
-	private int groupSize;
+    private Match match;
+	//private Project project;
+	ArrayList<Student> StuList = new ArrayList<Student>(); // The list that holds students
+	int groupSize;
 	private String selectedFile;
-	
+	String str=""; String gStr = "";
 	private JFileChooser chooser = new JFileChooser();
-
+    private final String NEWLINE =  "\n";
 	
 	// parse string from csv file
 	public void parseFile ( ) {
-		StuList = new ArrayList<Student>;
+		StuList = new ArrayList<Student>();
 		String line = "";
 		final String DELIMITER = ",";
 		
-		try {
-			FileNameExtensionFilter filter = new FileNameExtensionFilter(
-            		"txt", "cvs");
-            chooser.setFileFilter(filter);
+		
+			FileNameExtensionFilter filter = new 						FileNameExtensionFilter(
+            		"txt", "csv");
+           		chooser.setFileFilter(filter);
             
-            int returnVal = chooser.showOpenDialog(parent);
+           		int returnVal = chooser.showOpenDialog(null);
+                
+            		if(returnVal == JFileChooser.APPROVE_OPTION) {
+            			System.out.println("You chose to open this file: " +
+                		chooser.getSelectedFile().getName());
+                        
+            		}
             
-            if(returnVal == JFileChooser.APPROVE_OPTION) {
-            	System.out.println("You chose to open this file: " +
-                chooser.getSelectedFile().getName());
-            }
-            
-            selectedFile = chooser.getSelectedFile();
-			
-	        BufferedReader reader = new BufferedReader(
-	        		new FileReader(selectedFile));
-	        
-	        while ((line = br.readLine()) != null) {
+                
+			    try {
+	        	    BufferedReader br = new BufferedReader(
+	        		    new FileReader(chooser.getSelectedFile()));
+                
+	           
+	        	    while ((line = br.readLine()) != null) {
 	        	
-		        // use comma as separator
-	        	student = new Student;
-	        	student.name = line.split(DELIMITER);
-	        	student.id = line.split(DELIMITER);
-	        	student.gpa = line.split(DELIMITER);
-	        	
-	        	StuList.add(student);
-	        }
-		}
-	  	catch (FileNotFoundException ex) {
-	        JOptionPane.showMessageDialog(frame,
-	        		ex.getMessage(),
-	        	    JOptionPane.ERROR_MESSAGE);
-	    }
-	 }
+		        	// use comma as separator
+	        		    student = new Student();
+				        String[] info = new String[3];
+				        info = line.split(DELIMITER);
+	        		    student.name = info[0];
+	        		    student.id = info[1];
+	        		    student.gpa = Double.parseDouble(info[2]);
+	        	        str = str +" "+ (info[0] +" "+ info[1] + " " + info[2] + NEWLINE);
+	        		    StuList.add(student);
+	        	    }
+                
+                }
+                 catch (IOException ex) {
+	       		JOptionPane.showMessageDialog(null,
+	        		ex.getMessage());
+	        	    
+	   	        }
+		
+	  	}
 	
 	// receives the size of group 
 	public void setGroupSize ( int size ) {
@@ -84,17 +84,14 @@ public class Controller {
 	
 	// receives the Student list and make a group
 	public void makeGroup ( ArrayList<Student> StuList ) {
-		group = new Group;
-		
-		for ( int i = 0; i < groupSize; i++) {
-			
-		}
-		
-		makeGroupList(group);
+		groupList = match.makeGroups(StuList);
+        for(Group grp : this.groupList){
+            gStr = gStr + grp.id +" " + grp.groupMems.get(0) + NEWLINE;
+        }
 	}
 	
 	public void makeGroupList ( Group group ) {
-		groupList = new ArrayList<Group>;
+		groupList = new ArrayList<Group>();
 		groupList.add(group);
 	}
 	

@@ -13,15 +13,15 @@ import java.util.ArrayList;
 public class Group 
 {
 	//Max size of a group
-	private int size;
+	private Controller controller = new Controller();
+	int size = controller.groupSize;
 	//The group that will hold students
-	private ArrayList<Student> group;
+	ArrayList<Student> groupMems;
 	//The id for the group
-	private String id;
+	String id;
 	
 	public Group()
 	{}
-	
 	/*
 	 * Makes a group that cannot exceed a certain size
 	 * @param size the max size of a group
@@ -31,7 +31,7 @@ public class Group
 	{
 		this.size=size;
 		this.id=id;
-		group = new ArrayList<Student>(1);
+		groupMems = new ArrayList<Student>(1);
 	}
 	
 	/*
@@ -40,7 +40,7 @@ public class Group
 	 */
 	public boolean isFull()
 	{
-		return (this.size==group.size());
+		return (this.size==groupMems.size());
 	}
 	
 	/* 
@@ -49,7 +49,7 @@ public class Group
 	 */
 	public int numOfStudents()
 	{
-		return group.size();
+		return groupMems.size();
 	}
 	
 	/*
@@ -58,7 +58,7 @@ public class Group
 	 */
 	public boolean isInGroup(Student stu)
 	{
-		return group.contains(stu);
+		return groupMems.contains(stu);
 	}
 	
 	/*
@@ -69,7 +69,7 @@ public class Group
 	{
 		if(!this.isFull())
 		{
-			group.add(stu);
+			groupMems.add(stu);
 		}
 	}
 	
@@ -81,7 +81,7 @@ public class Group
 	{
 		if(this.isInGroup(stu))
 		{
-			group.remove(stu);
+			groupMems.remove(stu);
 		}
 	}
 	
@@ -89,9 +89,14 @@ public class Group
 	 * This Will return an arraylist of the members in a group
 	 * @return The group
 	 */
-	ArrayList<Student> getGroup()
+	public Group getGroup(String id)
 	{
-		return group;
+		for ( int x = controller.groupList.size(); x==0; x--){			Group grp = (controller.groupList.get(x));
+			if(grp.id==id){
+				return grp;
+			}
+		}
+	return null;
 	}
 	/*
 	 * Sets the id of a group
@@ -116,8 +121,8 @@ public class Group
 	public String groupToString() {
 		String out="";
 		
-		for(Student stu: this.group) {
-			out = out + stu.getFirstName() + " " + stu.getLastName() + ", ";
+		for(Student student: this.groupMems) {
+			out = out + student.name + ", ";
 		}
 		return out;
 	}
