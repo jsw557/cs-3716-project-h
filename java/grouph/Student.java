@@ -10,7 +10,9 @@ package grouph;
  */
 public class Student
 {
-	String firstName,lastName,id;
+	private String name;
+	private String id;
+	private double gpa;
 	/*
 	 * Empty Constructor
 	 */
@@ -18,80 +20,31 @@ public class Student
 	{}
 	
 	/*
-	 * Makes a student object with a first name , last name and an id
-	 * @param firstName The first name
-	 * @param lastName The Last Name
+	 * Makes a student object with a name and an id
+	 * @param name
 	 * @param id The unique id
 	 */
-	public Student(String firstName,String lastName,String id)
-	{
-		this.firstName = firstName;
-		this.lastName=lastName;
-		this.id=id;
+	public Student(String name,String id, double gpa) {
+		this.name = name;
+		this.id = id;
+		this.gpa = gpa;
 	}
 	
 	/*
-	 * Gets the students first name
+	 * Gets the students name
 	 * @return The given name
 	 */
-	String getFirstName()
+	String getName()
 	{
-		return firstName;
-	}
-	
-	/*
-	 * Gets the students last name
-	 * @return The family name
-	 */
-	String getLastName()
-	{
-		return lastName;
+		return name;
 	}
 	
 	/*
 	 * Gets the students id
 	 * @return The id of the student
 	 */
-	String getID()
+	String getId()
 	{
 		return id;
-	}
-	
-	/*
-	 * Changes the students first name
-	 * @paran name The Students given name
-	 */
-	void setFirstName(String name)
-	{
-		firstName =name;
-	}
-	
-	/*
-	 * Changes the students Last name
-	 * @param name The students given name
-	 */
-	void setLastName(String name)
-	{
-		lastName =name;
-	}
-	
-	/*
-	 * Changes the students full name
-	 * @param firstName The given name
-	 * @param lastName The family name
-	 */
-	void setName(String firstName,String lastName)
-	{
-		this.firstName= firstName;
-		this.lastName=lastName;
-	}
-	
-	/*
-	 * Changes a studnets ID
-	 * @param id The studnets ID
-	 */
-	void setID(String id)
-	{
-		this.id=id;
 	}
 }
