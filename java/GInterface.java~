@@ -1,0 +1,21 @@
+package grouph;
+
+import java.awt;
+import javax.swing;
+
+
+public class GInterface extends JFrame{
+    
+    public GroupWindow() {
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Group Maker");
+        setSize(300, 200);
+        setLocationRelativeTo(null);
+        setVisible(true);
+        pack();
+
+    }
+    
+
+}

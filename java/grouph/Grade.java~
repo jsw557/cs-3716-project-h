@@ -9,7 +9,7 @@ public class Grade
 	String id;
 	//Mark is a number representation of the letter grade
 	int mark;
-	private Controller controller = new Controller();
+
 	//Empty Constructor
 	public Grade()
 	{}

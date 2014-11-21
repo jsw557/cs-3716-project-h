@@ -13,7 +13,6 @@ package grouph;
  */
 public class Schedule 
 {
-	private Controller controller = new Controller();
 	//The 2D representation of a schedule
 	boolean[][] schedule;
 	
