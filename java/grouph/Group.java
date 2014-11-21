@@ -13,11 +13,11 @@ import java.util.ArrayList;
 public class Group 
 {
 	//Max size of a group
-	int size;
+	private int size;
 	//The group that will hold students
-	ArrayList<Student> group;
+	private ArrayList<Student> group;
 	//The id for the group
-	String id;
+	private String id;
 	
 	public Group()
 	{}
@@ -38,7 +38,7 @@ public class Group
 	 * Returns if a group is at max capacity or not
 	 * @return is the group is full
 	 */
-	boolean isFull()
+	public boolean isFull()
 	{
 		return (this.size==group.size());
 	}
@@ -47,7 +47,7 @@ public class Group
 	 * Returns the number of members in a group
 	 * @return The number of members in the group
 	 */
-	int numOfStudents()
+	public int numOfStudents()
 	{
 		return group.size();
 	}
@@ -56,7 +56,7 @@ public class Group
 	 * Finds if a student is in a group
 	 * @return Is student in group
 	 */
-	boolean isInGroup(Student stu)
+	public boolean isInGroup(Student stu)
 	{
 		return group.contains(stu);
 	}
@@ -65,7 +65,7 @@ public class Group
 	 * Adds a student to a group if there is room
 	 * @param stu The student we attempt to add to add to a group
 	 */
-	void add(Student stu)
+	public void add(Student stu)
 	{
 		if(!this.isFull())
 		{
@@ -77,7 +77,7 @@ public class Group
 	 * Removes a student from a group if they are in it
 	 * @param The student to be removed
 	 */
-	void remove(Student stu)
+	public void remove(Student stu)
 	{
 		if(this.isInGroup(stu))
 		{
@@ -97,8 +97,7 @@ public class Group
 	 * Sets the id of a group
 	 * @param id The new id for the group
 	 */
-	void setID(String id)
-	{
+	public void setId (String id) {
 		this.id = id;
 	}
 	
@@ -106,8 +105,7 @@ public class Group
 	 * Gets the id of a group
 	 * @return The group id
 	 */
-	String getID()
-	{
+	public String getId () {
 		return this.id;
 	}
 	
@@ -115,12 +113,11 @@ public class Group
 	 * Returns a string implementation of the members in a group
 	 * @return List of members in a group
 	 */
-	String groupToString()
-	{
+	public String groupToString() {
 		String out="";
-		for(Student stu:this.group)
-		{
-			out= out+ stu.getFirstName()+ " "+stu.getLastName()+", ";
+		
+		for(Student stu: this.group) {
+			out = out + stu.getFirstName() + " " + stu.getLastName() + ", ";
 		}
 		return out;
 	}
