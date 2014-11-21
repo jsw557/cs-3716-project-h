@@ -93,7 +93,13 @@ public class Controller {
 		System.out.println(StudentList.get(1).getName());
 		groupList = Match.makeGroups(StudentList,size);
         for(Group grp : this.groupList){
-            gStr = gStr + grp.id +" " + grp.groupMems.get(0).getName() + NEWLINE;
+            gStr = gStr + grp.id +": " ;
+            for(Student s: grp.groupMems)
+            	{
+            	gStr = gStr+s.getName()+", ";
+            	}
+            gStr= gStr.substring(0 , gStr.length()-2);
+            gStr = gStr+ NEWLINE;
         }
 	}
 	
