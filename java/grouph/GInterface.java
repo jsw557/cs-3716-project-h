@@ -7,7 +7,12 @@ import javax.swing.*;
 
 public class GInterface extends JFrame  {
     
-    private Controller controller = new Controller();
+    public Controller controller = new Controller();
+    
+    public Controller getController()
+    {
+    	return controller;
+    }
     
     public static void main(String[] args) {
 
@@ -62,7 +67,7 @@ public class GInterface extends JFrame  {
 
         ok1.addActionListener( new ActionListener () { public void actionPerformed(ActionEvent setGSize) {
                 controller.setGroupSize(Integer.parseInt(groupSize.getText()));
-            //System.out.println("It worked!");
+           // System.out.println("It worked!"+controller.groupSize);
             }
         });
         ok2.addActionListener( new ActionListener () {public void actionPerformed(ActionEvent getCrse) {
@@ -71,7 +76,8 @@ public class GInterface extends JFrame  {
             }
         });
         ok3.addActionListener( new ActionListener () {public void actionPerformed(ActionEvent makeGrp) {
-                controller.makeGroup(controller.StuList);
+        	System.out.println(controller.StuList.get(0).getName()+" "+controller.groupSize);
+                controller.makeGroup(controller.StuList,controller.groupSize);
                 groupList.setText(controller.gStr);
                 }
             
