@@ -1,3 +1,7 @@
 Adding skills to mix. Students have a skill value and it will affect matching.
 giving the initiator ability to force people to work together or apart
 if anyone would like to add more or anything please do so here
+
+I would also like to set more appropriate job assignment in Controller.java. 
+Currently it performs operations that would be better left to other classes. Controller should mostly refer to
+methods in other classes, not its own hard-coded ones.
