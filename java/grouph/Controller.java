@@ -69,7 +69,7 @@ public class Controller {
 				        info = line.split(DELIMITER);
 	        		    student.name = info[0];
 	        		    student.id = info[1];
-	        		    student.gpa = Double.parseDouble(info[2]);
+	        		   // student.gpa = Double.parseDouble(info[2]);
 	        	        str = str +" "+ (info[0] +" "+ info[1] + " " + info[2] + NEWLINE);
 	        		    StuList.add(student);
 	        	    }
@@ -90,7 +90,7 @@ public class Controller {
 	
 	// receives the Student list and make a group
 	public void makeGroup ( ArrayList<Student> StudentList,int size) {
-		System.out.println(StudentList.get(1).getName());
+		//System.out.println(StudentList.get(1).getName());
 		groupList = Match.makeGroups(StudentList,size);
         for(Group grp : this.groupList){
             gStr = gStr + grp.id +": " ;

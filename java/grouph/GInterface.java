@@ -40,10 +40,10 @@ public class GInterface extends JFrame  {
         final JTextArea classList = new JTextArea();
         classList.setPreferredSize(new Dimension(400, 320));   // select class
        // classList.setEditable(false);
-        JScrollPane classScrollPane = new JScrollPane(classList);
+       // JScrollPane classScrollPane = new JScrollPane(classList);
         final JTextArea groupList = new JTextArea();
         groupList.setPreferredSize(new Dimension(400, 320));    // make groups
-        JScrollPane groupScrollPane = new JScrollPane(groupList);
+        //JScrollPane groupScrollPane = new JScrollPane(groupList);
         groupList.setEditable(false);
             
 

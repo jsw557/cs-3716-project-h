@@ -15,10 +15,58 @@ public class GroupSpecs
 	//Sets size of the groups
 	int size;
 	//List of students that the initiator wishes to match or keep apart
-	ArrayList<String> forceMatch, forceApart;
+	ArrayList<Student> forceMatch, forceApart;
 	//The course id
 	String CRN;
 	//List of courses marks will be needed from
+	ArrayList<Course> reqCourses;
 	
+	//Blank Constructor
+	public GroupSpecs()
+	{
+		forceMatch = new ArrayList<Student>(0);
+		forceApart = new ArrayList<Student>(0);
+	}
 	
+	/*
+	 * Sets the max size of the groups
+	 * @param size The max size
+	 */
+	void setSize(int size)
+	{
+		this.size=size;
+	}
+	
+	/*
+	 * Gets the max size of a group
+	 * @return Max Group size
+	 */
+	int getSize()
+	{
+		return size;
+	}
+	
+	/*
+	 * Set the value of the course he is looking to make groups for
+	 * @param CRN The id of the course
+	 */
+	void setCRN(String CRN)
+	{
+		this.CRN=CRN;
+	}
+	
+	/*
+	 * Get the ID of the course 
+	 * @return The course id
+	 */
+	String getCourseID()
+	{
+		return CRN;
+	}
+	
+	/*
+	 * Sets the list of courses the initiator decides are important to have
+	 * @param reqCourses The required courses
+	 */
+	void setRequiredCourses()
 }

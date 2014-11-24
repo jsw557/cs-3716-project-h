@@ -23,7 +23,7 @@ public class Match
 		
 
 		public static ArrayList<Group> makeGroups(ArrayList<Student> studentList,int size){
-			System.out.println("Check match 1");
+			//System.out.println("Check match 1");
 	
 			stuList =  studentList;
 			
@@ -32,8 +32,8 @@ public class Match
 			int idNum = 65;
 			String id = "";
 			int gSize = size;
-			System.out.println(n+" "+gSize);
-			System.out.println("Check match 1");
+			//System.out.println(n+" "+gSize);
+			//System.out.println("Check match 1");
 			for (int x=(n / gSize); x>0; x-- ){
 				
 				id = "Group " + Character.toString((char)idNum);
@@ -42,14 +42,14 @@ public class Match
 				for (int y=gSize-1; y>=0; y--)
 				{
                     grp.setId(id);
-                    System.out.println("Check match 2");
-                    System.out.println(stuList.size());
-					System.out.println(stuList.get(0).getName()+" "+grp.groupMems.size());
+                   // System.out.println("Check match 2");
+                    //System.out.println(stuList.size());
+					//System.out.println(stuList.get(0).getName()+" "+grp.groupMems.size());
 					Student stu = stuList.remove(0);
 					
-					System.out.println(stu.getName());
+					//System.out.println(stu.getName());
                     grp.add(stu);
-                    System.out.println("Check match 2");
+                    //System.out.println("Check match 2");
 					//stuList.remove(y);
                 }
 				groupList.add(grp);               
