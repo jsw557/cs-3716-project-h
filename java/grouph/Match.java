@@ -11,7 +11,7 @@ public class Match
 {
 		
 	//How a student fits into a group
-        private Controller controller = new Controller();
+        private static Controller controller = new Controller();
 		
 	//	double compatable;
 
@@ -19,22 +19,38 @@ public class Match
 
 		Student student;
 
-		ArrayList<Student> stuList = controller.StuList;
+		static ArrayList<Student> stuList;
+		
 
-		public ArrayList<Group> makeGroups(ArrayList<Student> stuList){
+		public static ArrayList<Group> makeGroups(ArrayList<Student> studentList,int size){
+			System.out.println("Check match 1");
+	
+			stuList =  studentList;
+			
 			ArrayList<Group> groupList = new ArrayList<Group>();
 			int n = stuList.size();
 			int idNum = 65;
 			String id = "";
-			int gSize = controller.groupSize;
+			int gSize = size;
+			System.out.println(n+" "+gSize);
+			System.out.println("Check match 1");
 			for (int x=(n / gSize); x>0; x-- ){
 				
 				id = "Group " + Character.toString((char)idNum);
                 Group grp = new Group();
-				for (int y=gSize; y>0; y--){
+                grp.setSize(gSize);
+				for (int y=gSize-1; y>=0; y--)
+				{
                     grp.setId(id);
-					grp.groupMems.add(stuList.get(y));
-					stuList.remove(y);
+                    System.out.println("Check match 2");
+                    System.out.println(stuList.size());
+					System.out.println(stuList.get(0).getName()+" "+grp.groupMems.size());
+					Student stu = stuList.remove(0);
+					
+					System.out.println(stu.getName());
+                    grp.add(stu);
+                    System.out.println("Check match 2");
+					//stuList.remove(y);
                 }
 				groupList.add(grp);               
 				idNum++;
