@@ -7,7 +7,7 @@ package grouph;
 /**
  * A class that will create a 2D array of Boolean values that will determine if students are free 
  * at certain times during the day.Schedule is made of blocks that are divided into days and hours.
- *  If free a block will be true if busy a block will be false.
+ *  If free a block will be false if busy a block will be true.
  * @author stb
  *
  */
@@ -38,7 +38,7 @@ public class Schedule
 	}
 	
 	/*
-	 * Initializes the schedule to all busy time
+	 * Initializes the schedule to all free time
 	 */
 	void initialize()
 	{
@@ -86,7 +86,7 @@ public class Schedule
 	 */
 	void setBlockBusy(int day,int hour)
 	{
-		schedule[day][hour] = false;
+		schedule[day][hour] = true;
 	}
 	
 	/*
@@ -96,7 +96,7 @@ public class Schedule
 	 */
 	void setBlockFree(int day,int hour)
 	{
-		schedule[day][hour]=true;
+		schedule[day][hour]=false;
 	}
 	
 	/*
@@ -116,8 +116,8 @@ public class Schedule
 	{
 		if(this.getBlock(day, hour)==false)
 		{
-			return "Busy";
+			return "Free";
 		}
-		return "Free";
+		return "Busy";
 	}
 }

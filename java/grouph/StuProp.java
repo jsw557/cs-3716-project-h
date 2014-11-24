@@ -13,7 +13,7 @@ public class StuProp
 	//Schedule of a student
 	Schedule schedule;
 	//Lists of desired/forced matches and separations
-	ArrayList<Student> desiredMatch, desiredApart;//, forceMatch, forceApart;
+	ArrayList<Student> desiredMatch, desiredApart, forceMatch, forceApart;
 	//List of grades for completed courses
 	ArrayList<Grade> marks;
 	//List of values to represent skills from a self evaluation
@@ -27,8 +27,8 @@ public class StuProp
 		schedule = new Schedule();
 		desiredMatch = new ArrayList<Student>(0);
 		desiredApart = new ArrayList<Student>(0);
-		//forceMatch = new ArrayList<Student>(0);
-		//forceApart = new ArrayList<Student>(0);
+		forceMatch = new ArrayList<Student>(0);
+		forceApart = new ArrayList<Student>(0);
 		marks = new ArrayList<Grade>(0);
 		skills = new ArrayList<Integer>(0);
 	}
@@ -41,8 +41,8 @@ public class StuProp
 		this.schedule =schedule;
 		this.desiredMatch = desiredMatch;
 		this.desiredApart = desiredApart;
-		//this.forceApart = forceApart;
-		//this.forceMatch =forceMatch;
+		this.forceApart = forceApart;
+		this.forceMatch =forceMatch;
 		this.marks = marks;
 		this.skills = skills;
 	}
@@ -55,8 +55,8 @@ public class StuProp
 		this.schedule = schedule;
 		desiredMatch = new ArrayList<Student>(0);
 		desiredApart = new ArrayList<Student>(0);
-		//forceMatch = new ArrayList<Student>(0);
-		//forceApart = new ArrayList<Student>(0);
+		forceMatch = new ArrayList<Student>(0);
+		forceApart = new ArrayList<Student>(0);
 		marks = new ArrayList<Grade>(0);
 		skills = new ArrayList<Integer>(0);
 		
@@ -196,35 +196,53 @@ public class StuProp
 	 * Gets the list of students this student has to be matched with if possible
 	 * @return The list of students this studnt has to be matched with
 	 */
-	//ArrayList<Student> getForceMatches()
+	ArrayList<Student> getForceMatches()
 	{
-		//return forceMatch;
+		return forceMatch;
 	}
 	
 	/*
 	 * Adds a student to the list of students this student must be matched with
 	 * @param student The Student to be added 
 	 */
-	//void addForceMatch(Student student)
+	void addForceMatch(Student student)
 	{
-		//forceMatch.add(student);
+		forceMatch.add(student);
+	}
+	
+	/*
+	 * Removes a student from the list of forced to work together
+	 * @param student The student to be removed
+	 */
+	void removeForceMatch(Student student)
+	{
+		forceMatch.remove(student);
 	}
 	
 	/*
 	 * Gets the list of students this cannot work with under any circumstances
 	 * @return The list of banned matches for this student
 	 */
-	//ArrayList<Student> getForcedApart()
+	ArrayList<Student> getForcedApart()
 	{
-		//return forceApart;
+		return forceApart;
 	}
 	
 	/*
 	 * Adds a student to the list of students that this student cannot work with
 	 * @param student The student to be added
 	 */
-	//void addForceApart(Student student)
+	void addForceApart(Student student)
 	{
-		//forceApart.add(student);
+		forceApart.add(student);
+	}
+	
+	/*
+	 * Remove a student from the force apart list
+	 * @param student The student to be removed
+	 */
+	void removeForceApart(Student student)
+	{
+		forceApart.remove(student);
 	}
 }

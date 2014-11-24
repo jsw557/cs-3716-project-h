@@ -15,7 +15,7 @@ public class GroupSpecs
 	//Sets size of the groups
 	int size;
 	//List of students that the initiator wishes to match or keep apart
-	ArrayList<Student> forceMatch, forceApart;
+	//ArrayList<Student> forceMatch, forceApart;
 	//The course id
 	String CRN;
 	//List of courses marks will be needed from
@@ -24,8 +24,8 @@ public class GroupSpecs
 	//Blank Constructor
 	public GroupSpecs()
 	{
-		forceMatch = new ArrayList<Student>(0);
-		forceApart = new ArrayList<Student>(0);
+		//forceMatch = new ArrayList<Student>(0);
+		//forceApart = new ArrayList<Student>(0);
 	}
 	
 	/*
@@ -68,5 +68,38 @@ public class GroupSpecs
 	 * Sets the list of courses the initiator decides are important to have
 	 * @param reqCourses The required courses
 	 */
-	void setRequiredCourses()
+	void setRequiredCourses(ArrayList<Course> reqCourses)
+	{
+		this.reqCourses = reqCourses;
+	}
+	
+	/*
+	 * gets the list of required courses
+	 * @return the list of required course marks
+	 */
+	ArrayList<Course> getReqCourses()
+	{
+		return reqCourses;
+	}
+	
+	/*
+	 * Adds a course to the list of required courses
+	 * @param course The course to be added
+	 */
+	void addReqCourse(Course course)
+	{
+		if(!reqCourses.contains(course))
+		{
+			reqCourses.add(course);	
+		}
+	}
+	
+	/*
+	 * Removes a course from the list of courses
+	 * @param course The course being removed
+	 */
+	void removeReqCourse(Course course)
+	{
+		reqCourses.remove(course);
+	}
 }
