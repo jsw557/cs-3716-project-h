@@ -36,13 +36,13 @@ public class GInterface extends JFrame  {
         JPanel makePanel = new JPanel();
 
         final JTextField groupSize = new JTextField();
-        groupSize.setPreferredSize(new Dimension(200, 28));  // get size
+        groupSize.setPreferredSize(new Dimension(50, 25));
         final JTextArea classList = new JTextArea();
-        classList.setPreferredSize(new Dimension(400, 320));   // select class
+        classList.setPreferredSize(new Dimension(150, 120));
        // classList.setEditable(false);
         JScrollPane classScrollPane = new JScrollPane(classList);
         final JTextArea groupList = new JTextArea();
-        groupList.setPreferredSize(new Dimension(400, 320));    // make groups
+        groupList.setPreferredSize(new Dimension(150, 120));    
         JScrollPane groupScrollPane = new JScrollPane(groupList);
         groupList.setEditable(false);
             
@@ -86,7 +86,7 @@ public class GInterface extends JFrame  {
     
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Group Maker");
-        setSize(600, 700);         // main frame
+        setSize(400, 350);
         setLocationRelativeTo(null);
         
     }
