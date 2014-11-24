@@ -16,12 +16,14 @@ public class Group
 	private Controller controller = new Controller();
 	int size = controller.groupSize;
 	//The group that will hold students
-	ArrayList<Student> groupMems;
+	public ArrayList<Student> groupMems;
 	//The id for the group
 	String id;
 	
 	public Group()
-	{}
+	{
+		groupMems = new ArrayList<Student>(0);
+	}
 	/*
 	 * Makes a group that cannot exceed a certain size
 	 * @param size the max size of a group
@@ -31,7 +33,7 @@ public class Group
 	{
 		this.size=size;
 		this.id=id;
-		groupMems = new ArrayList<Student>(1);
+		groupMems = new ArrayList<Student>(0);
 	}
 	
 	/*
@@ -126,4 +128,14 @@ public class Group
 		}
 		return out;
 	}
+	
+	/*
+	 * Sets the max size of the groups
+	 * @param size the size of the groups
+	 */
+	void setSize(int size)
+	{
+		this.size=size;
+	}
+	
 }
