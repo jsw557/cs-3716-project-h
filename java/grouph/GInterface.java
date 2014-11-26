@@ -2,10 +2,12 @@ package grouph;
 
 import java.awt.event.*;
 import java.awt.*;
+
 import javax.swing.*;
 
 
 public class GInterface extends JFrame  {
+	private JScrollPane scrollPane;
     
     public Controller controller = new Controller();
     
@@ -30,19 +32,22 @@ public class GInterface extends JFrame  {
     }
     public void initGUI() {
         
-        setLayout(new BorderLayout());
+        //setLayout(new BorderLayout());
+        setLayout(new GridLayout(3,3));
         JPanel infoPanel = new JPanel();
+        JPanel gSize = new JPanel();
         JPanel groupPanel = new JPanel();
         JPanel makePanel = new JPanel();
 
         final JTextField groupSize = new JTextField();
-        groupSize.setPreferredSize(new Dimension(200, 28));  // Get size
+        groupSize.setPreferredSize(new Dimension(200, 28));  // get size
         final JTextArea classList = new JTextArea();
-        classList.setPreferredSize(new Dimension(400, 320));   // Select class
+        classList.setPreferredSize(new Dimension(400, 320));   // select class
        // classList.setEditable(false);
         JScrollPane classScrollPane = new JScrollPane(classList);
+        
         final JTextArea groupList = new JTextArea();
-        groupList.setPreferredSize(new Dimension(400, 320));    // Make groups
+        groupList.setPreferredSize(new Dimension(400, 320));    // make groups
         JScrollPane groupScrollPane = new JScrollPane(groupList);
         groupList.setEditable(false);
             
@@ -52,18 +57,28 @@ public class GInterface extends JFrame  {
         JButton ok2 = new JButton("Select Class");
         JButton ok3 = new JButton("Make Groups");
 	   
-        infoPanel.add(groupSize);
+        //infoPanel.add(groupSize);      
         infoPanel.add(ok1);
-        groupPanel.add(classList); 
+        gSize.add(groupSize);
+        //groupPanel.add(classList); 
         groupPanel.add(ok2);
-        makePanel.add(groupList);
+        //groupPanel.add(classScrollPane);
+        //makePanel.add(groupList);
         makePanel.add(ok3);       
+        //makePanel.add(groupScrollPane);
+       // add(infoPanel, BorderLayout.NORTH);
+        //add(groupPanel,BorderLayout.CENTER);
+        //add(classScrollPane,BorderLayout.NORTH);
+       // add(makePanel, BorderLayout.SOUTH);
         
-        add(infoPanel, BorderLayout.NORTH);
-        add(groupPanel,BorderLayout.CENTER);
-        add(makePanel, BorderLayout.SOUTH);
-
         
+        add(gSize);
+        add(infoPanel);
+        add(classScrollPane);
+        add(groupPanel);
+        
+        add(groupScrollPane);
+        add(makePanel);
 
         ok1.addActionListener( new ActionListener () { public void actionPerformed(ActionEvent setGSize) {
                 controller.setGroupSize(Integer.parseInt(groupSize.getText()));
