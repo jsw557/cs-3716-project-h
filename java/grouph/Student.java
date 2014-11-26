@@ -5,46 +5,52 @@ package grouph;
  * @author stb
  *
  */
-public class Student
-{
+public class Student {
 	private Controller controller = new Controller();
-	String name;
-	String id;
-	double gpa;
+	private String name;
+	private String id;
+	private double gpa;
+
 	/*
-	 * Empty Constructor
-	 */
-	public Student()
-	{}
-	
-	/*
-	 * Makes a student object with a name and an id
+	 * Makes a student object with a name, an id, and GPA
 	 * @param name
 	 * @param id The unique id
-	 */
-	public Student( String name,String id, double gpa ) {
+	 * @param gpa 
+	 
+	public Student( String name, String id, double gpa ) {
 		this.name = name;
 		this.id = id;
 		this.gpa = gpa;
 	}
+	*/
 	
-	/*
-	 * Gets the students name
-	 * @return The given name
-	 */
+	// gets the students name
 	public String getName() {
 		return name;
 	}
 	
-	/*
-	 * Gets the students id
-	 * @return The id of the student
-	 */
+	// gets the students ID
 	public String getId() {
 		return id;
 	}
 	
+	// gets the students GPA
 	public double getGPA() {
 		return gpa;
+	}
+	
+	// sets the students name
+	public void setName( String n ) {
+		this.name = n;
+	}
+	
+	// sets the students ID
+	public void setId( String i ) {
+		this.id = i;
+	}
+	
+	// sets the students GPA
+	public void setGPA( double g ) {
+		this.gpa = g;
 	}
 }
