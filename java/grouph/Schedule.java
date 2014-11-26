@@ -138,4 +138,26 @@ public class Schedule
 			}
 		}
 	}
+	
+	/*
+	 * Returns number of blocks that each shedule has free
+	 * @return The number of timeslots two schedule are free
+	 */
+	int compare(Schedule schedule)
+	{
+		int x = this.getDays();
+		int y = this.getHours();
+		int count=0;
+		for(int i=0;i<x;i++)
+		{
+			for(int j =0;j<y;j++)
+			{
+				if(this.getBlock(i, j)==schedule.getBlock(i, j))
+				{
+					count++;
+				}
+			}
+		}
+		return count;
+	}
 }
