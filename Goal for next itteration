@@ -5,3 +5,5 @@ if anyone would like to add more or anything please do so here
 I would also like to set more appropriate job assignment in Controller.java. 
 Currently it performs operations that would be better left to other classes. Controller should mostly refer to
 methods in other classes, not its own hard-coded ones.
+
+In skill part: need an algorithm to finish how to make the "skill value" of each group close the "average value" of class.
