@@ -4,7 +4,12 @@ import java.awt.event.*;
 import java.awt.*;
 
 import javax.swing.*;
-
+/*
+ * process data in GUI 
+ * function for instructor input the size of class
+ * select the class file in CSV
+ * make the group list and show in frame
+ */
 
 public class GInterface extends JFrame  {
 	private JScrollPane scrollPane;
