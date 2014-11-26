@@ -1,3 +1,5 @@
+package grouph;
+
 /*
  * Grade is comtbprised of a course and a mark.
  */

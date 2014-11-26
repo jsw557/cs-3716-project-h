@@ -1,4 +1,4 @@
-
+package grouph;
 
 /**
  * A class that will create a 2D array of Boolean values that will determine if students are free 
