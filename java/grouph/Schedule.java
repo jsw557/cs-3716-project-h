@@ -7,13 +7,13 @@ package grouph;
 /**
  * A class that will create a 2D array of Boolean values that will determine if students are free 
  * at certain times during the day.Schedule is made of blocks that are divided into days and hours.
- *  If free a block will be false if busy a block will be true.
+ *  If free a block will be true if busy a block will be false.
  * @author stb
  *
  */
 public class Schedule 
 {
-	private Controller controller = new Controller();
+	//private Controller controller = new Controller();
 	//The 2D representation of a schedule
 	boolean[][] schedule;
 	
@@ -46,7 +46,7 @@ public class Schedule
 		{
 			for(int j=0;j<this.getHours();j++)
 			{
-				schedule[i][j]=false;
+				schedule[i][j]=true;
 			}
 		}
 	}
@@ -86,7 +86,7 @@ public class Schedule
 	 */
 	void setBlockBusy(int day,int hour)
 	{
-		schedule[day][hour] = true;
+		schedule[day][hour] = false;
 	}
 	
 	/*
@@ -96,7 +96,7 @@ public class Schedule
 	 */
 	void setBlockFree(int day,int hour)
 	{
-		schedule[day][hour]=false;
+		schedule[day][hour]=true;
 	}
 	
 	/*
@@ -114,10 +114,28 @@ public class Schedule
 	 */
 	String blockToString(int day,int hour)
 	{
-		if(this.getBlock(day, hour)==false)
+		if(this.getBlock(day, hour)==true)
 		{
 			return "Free";
 		}
 		return "Busy";
+	}
+	
+	/*
+	 * Combines two schedules by getting all busy times from one schedule and adding them to this one
+	 * @param schedule The schedule we are adding to this schedule
+	 */
+	void merge(Schedule schedule)
+	{
+		for(int i = 0;i<schedule.getDays();i++)
+		{
+			for(int j=0;j<schedule.getHours();j++)
+			{
+				if(schedule.getBlock(i, j) == false)
+				{
+					this.setBlockBusy(i,j);
+				}
+			}
+		}
 	}
 }
