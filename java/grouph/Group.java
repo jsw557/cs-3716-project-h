@@ -119,7 +119,7 @@ public class Group
 		String out="";
 		
 		for( Student student: this.groupMems ) {
-			out = out + student.name + ", ";
+			out = out + student.getName() + ", ";
 		}
 		
 		return out;
