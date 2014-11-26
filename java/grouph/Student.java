@@ -1,7 +1,3 @@
-/**
- * 
- */
-package grouph;
 
 /**
  * Creates a student that will be added to a group
@@ -25,7 +21,7 @@ public class Student
 	 * @param name
 	 * @param id The unique id
 	 */
-	public Student(String name,String id, double gpa) {
+	public Student( String name,String id, double gpa ) {
 		this.name = name;
 		this.id = id;
 		this.gpa = gpa;
@@ -35,8 +31,7 @@ public class Student
 	 * Gets the students name
 	 * @return The given name
 	 */
-	String getName()
-	{
+	public String getName() {
 		return name;
 	}
 	
@@ -44,8 +39,11 @@ public class Student
 	 * Gets the students id
 	 * @return The id of the student
 	 */
-	String getId()
-	{
+	public String getId() {
 		return id;
+	}
+	
+	public double getGPA() {
+		return gpa;
 	}
 }
