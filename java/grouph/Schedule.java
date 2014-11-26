@@ -1,7 +1,3 @@
-/**
- * 
- */
-package grouph;
 
 
 /**
@@ -11,8 +7,7 @@ package grouph;
  * @author stb
  *
  */
-public class Schedule 
-{
+public class Schedule {
 	private Controller controller = new Controller();
 	//The 2D representation of a schedule
 	boolean[][] schedule;
@@ -20,8 +15,7 @@ public class Schedule
 	/*
 	 * Creates a Schedule for 24 hours and 7 days
 	 */
-	public Schedule()
-	{
+	public Schedule() {
 		schedule = new boolean[7][24];
 		this.initialize();
 	}
@@ -31,8 +25,7 @@ public class Schedule
 	 * @param days The number of days we are considering for the schedule
 	 * @param hours The number of hours a day we consider for the schedule
 	 */
-	public Schedule(int days,int hours)
-	{
+	public Schedule( int days, int hours ) {
 		schedule = new boolean[days][hours];
 		this.initialize();
 	}
@@ -40,12 +33,10 @@ public class Schedule
 	/*
 	 * Initializes the schedule to all busy time
 	 */
-	void initialize()
-	{
-		for(int i=0;i<this.getDays();i++)
-		{
-			for(int j=0;j<this.getHours();j++)
-			{
+	public void initialize() {
+		for( int i = 0; i < this.getDays(); i++ ) {
+			
+			for( int j = 0; j < this.getHours(); j++ ) {
 				schedule[i][j]=false;
 			}
 		}
@@ -55,8 +46,7 @@ public class Schedule
 	 * Gets the number of days in a schedule
 	 * @return The number of days in this schedule
 	 */
-	int getDays()
-	{
+	public int getDays() {
 		return schedule.length;
 	}
 	
@@ -64,8 +54,7 @@ public class Schedule
 	 * Gets the number of hours in a day of the schedule
 	 * @return The number of hours the schedule considers in a day
 	 */
-	int getHours()
-	{
+	public int getHours() {
 		return schedule[0].length;
 	}
 	
@@ -74,8 +63,7 @@ public class Schedule
 	 * @param day The selected day we are considering
 	 * @param hour The Selected hour of the day we are considering
 	 */
-	boolean getBlock(int day,int hour)
-	{
+	public boolean getBlock( int day, int hour ) {
 		return schedule[day][hour];
 	}
 	
@@ -84,8 +72,7 @@ public class Schedule
 	 * @param day The Selected day
 	 * @param hour The Selected hour of the day
 	 */
-	void setBlockBusy(int day,int hour)
-	{
+	public void setBlockBusy( int day, int hour ) {
 		schedule[day][hour] = false;
 	}
 	
@@ -94,8 +81,7 @@ public class Schedule
 	 * @param day Selected day of the schedule
 	 * @param hour Selected hour of the day
 	 */
-	void setBlockFree(int day,int hour)
-	{
+	public void setBlockFree( int day, int hour ) {
 		schedule[day][hour]=true;
 	}
 	
@@ -103,8 +89,7 @@ public class Schedule
 	 * Returns a 2D array representing the schedule
 	 * @return The schedule
 	 */
-	boolean[][] getSchedule()
-	{
+	public boolean[][] getSchedule() {
 		return schedule;
 	}
 	
@@ -112,10 +97,8 @@ public class Schedule
 	 * Returns a string representation of if a block is free or busy
 	 * @return State of the Block
 	 */
-	String blockToString(int day,int hour)
-	{
-		if(this.getBlock(day, hour)==false)
-		{
+	public String blockToString( int day, int hour ) {
+		if( this.getBlock( day, hour ) == false ) {
 			return "Busy";
 		}
 		return "Free";

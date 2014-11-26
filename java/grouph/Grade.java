@@ -1,5 +1,3 @@
-package grouph;
-
 /*
  * Grade is comtbprised of a course and a mark.
  */
@@ -19,8 +17,7 @@ public class Grade
 	 * @param id The id to represent the course
 	 * @param grade The mark achieved in the course
 	 */
-	public Grade(String id,int mark)
-	{
+	public Grade( String id, int mark ) {
 		this.id=id;
 		this.mark=mark;
 	}
@@ -29,8 +26,7 @@ public class Grade
 	 * Gets the id of a course
 	 * @return The id of the course from this grade
 	 */
-	String getCourseID()
-	{
+	public String getCourseID() {
 		return id;
 	}
 	
@@ -38,8 +34,7 @@ public class Grade
 	 * Gets the Mark Achieved in the course
 	 * @return The Mark acheived in this Course
 	 */
-	int getMark()
-	{
+	public int getMark() {
 		return mark;
 	}
 	
@@ -47,8 +42,7 @@ public class Grade
 	 * Set the course id
 	 * @param id the ID of the new course
 	 */
-	void setCourse(String id)
-	{
+	public void setCourse( String id ) {
 		this.id=id;
 	}
 	
@@ -56,8 +50,7 @@ public class Grade
 	 * Sets the new mark for the course
 	 * @param mark The new mark for the course
 	 */
-	void setGrade(int mark)
-	{
+	public void setGrade( int mark ) {
 		this.mark=mark;
 	}
 	
@@ -65,17 +58,18 @@ public class Grade
 	 * Gets the letter grade associated with the Mark
 	 * @return The Letter grade for the course
 	 */
-	String markToString()
-	{
-		switch(this.mark)
-		{
-		case 1: return "F";
-		case 2: return "D";
-		case 3: return "C";
-		case 4: return "B";
-		case 5: return "A";
+	public String markToString() {
+		switch(this.mark) {
+		
+			case 1: return "F";
+			case 2: return "D";
+			case 3: return "C";
+			case 4: return "B";
+			case 5: return "A";
+			
 		}
-		return"ERROR GRADE OUT OF RANGE";
+		
+		return "ERROR GRADE OUT OF RANGE";
 	}
 	
 }

@@ -1,7 +1,3 @@
-/**
- * 
- */
-package grouph;
 import java.util.ArrayList;
 
 /**
@@ -10,8 +6,7 @@ import java.util.ArrayList;
  * @author stb
  *
  */
-public class GroupSpecs 
-{
+public class GroupSpecs {
 	//Sets size of the groups
 	int size;
 	//List of students that the initiator wishes to match or keep apart
