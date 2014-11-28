@@ -7,7 +7,7 @@ package grouph;
 public class Overview
 
 {
-	private Controller controller = new Controller();
+	//private Controller controller = new Controller();
 	static void swap(Group g1,Group g2,Student stu1,Student stu2)
 
 	{
