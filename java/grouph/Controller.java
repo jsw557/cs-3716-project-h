@@ -24,7 +24,7 @@ public class Controller {
     //private Match match;
 	//private Project project;
 	private ArrayList<Student> stuList; // The list that holds students
-	private int groupSize;
+	int groupSize;
 	private String selectedFile;
 	private String str = "";
 	String gStr = "";
